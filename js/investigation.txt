@@ -1,0 +1,35 @@
+Q: Where is the jQuery library located in the exercise folder? If you can't find it, how has the jQuery library been included in the webpage?
+A: It is linked in the index.html. It is using a CDN to load it from another website, rather than storing it on this site.
+
+Q: How has the API URL been referred to in the code?
+A: It is in the AJAX [ $.ajax() ] call in the url parameter of the function.
+
+Q: How have the additional components of the URL — resource_id and limit — been added onto the URL? What might they refer to?
+A: They are passed in the data dictionary.
+
+Q: Looking through the jQuery API documentation for AJAX, why has the example used "jsonp" as the dataType instead of just "json"?
+A: JSONP stands for “JSON with Padding” and it is a workaround for loading data from different domains.
+
+Q: What's returned from the AJAX request — an array, an object or combination?
+A: A JavsScript object
+
+Q: Why is cache set to true in the AJAX request?
+A: So the browser will remember the result of the request so that it doesn't need to go to the API everytime the page loads.
+
+Q: How has jQuery.each() been used to iterative over the data?
+A: data.result.records is an array. It uses the array index as the record key and the array value for that index as the record value.
+
+Q: How has the correct series of records been selected from the data variable?
+A: It loads the values for each of the properties into variables. The properties are the titles of the columns in the dataset. dc:title, decterms:temporal, 150_pixel_jpg, dc:description
+
+Q: How have if statements been used to ensure each record has a complete set of information?
+A: It checks to see if all parameters have a value - title, year, image, and description. It will be a value will be evaulated as false if it is empty or doesn't exist.
+
+Q: How have jQuery selectors been used to create HTML elements while also appending them to a parent element?
+A: Where < element > style selectors have been used, this will create a new element rather than finding an existing element in the DOM.
+
+Q: Is it good practice to create HTML elements with JavaScript? Why?
+A: For creating static websites, no; for creating dynamically generated websites, not as bad due to the nature of dynamic data.
+
+Q: If "dcterms:temporal" contains more than just the year, how has only 4 digits for the year been extracted from it?
+A: Used regex to extract 4 consecutive digits from the string that is dcterms:temporal.

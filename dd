@@ -1,0 +1,27 @@
+<section id="records">
+  <div class="blog-container">
+    <div class="blog-box">
+      <div class="blog-img">
+        <img />
+        <article class="blog-text">
+          <span class="date">
+            `Date: From ${shortenStartTime} to ${shortenEndTime}`
+          </span>
+          <p class="blog-title"></p>
+          <div class="blog-loc">
+            <p class="blog-location">`${recordLocation}`</p>
+          </div>
+          <p class="short-description">
+            ${recordDescription.substring(0, 240)} ....`
+          </p>
+          <div class="blog-button">
+            <form method="get" action="details.php">
+              <input type="hidden" name="event" value=" + count + " />
+              <input class="button" type="submit" value=" see more details.." />
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1451 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*  ------ GENERAL STYLES ----- */
+a {
+  text-decoration: none;
+}
+a:any-link {
+  color: #41a5a5;
+}
+
+.sectionHeader {
+  font-size: 4.5em;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  padding: 100px 0px 40px 0px;
+
+  /* margin-left: 20px; */
+
+  color: #41a5a5;
+}
+.arrow {
+  position:absolute;
+  z-index: 990;
+  width:4%;
+  margin-left:46%;
+  margin-top:560px;
+  padding-top: 0;
+  transition: top ease 2s;
+}
+
+.arrow:hover {
+  padding-top: 10px;
+}
+/* ------------------- NAVIGATION BAR ----- */
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  /* background-color: rgb(243, 255, 241); */
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
+  z-index: 950;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo {
+  padding-left: 2%;
+  padding-right: 1%;
+  width: 26%;
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 2.5vw;
+  color: #1e78a1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.logo a img {
+  width: 38px;
+  margin-top: -7px;
+}
+.logo a img:hover {
+  opacity: 0.8;
+}
+#navbar {
+  overflow: hidden;
+}
+
+.nav-links {
+  display: inline-flex;
+  width: 70%;
+  padding-right: 1%;
+  margin-top: -7px;
+  justify-content: space-around;
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 0px;
+  padding-left: 4vw;
+  margin: 0px;
+}
+
+.nav-links a,
+#filter-text {
+  color: #899794;
+  /* color: #77c9d4; */
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.3vw;
+}
+.nav-links a i {
+  padding-right: 7px;
+  font-size: 0.9em;
+}
+
+.nav-links a:hover {
+  opacity: 0.5;
+}
+
+.nav-links img {
+  display: inline;
+  padding-bottom: -10px;
+  width: 23px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 80px;
+}
+
+/* ========================================================================== Home Page === */
+/* ========================================================================== Main Page === */
+
+/* ------------------------- loading page --- */
+
+body.loaded #loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(26, 26, 26) url(../asset/newLoading.gif) center center
+    no-repeat;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  z-index: 1000;
+}
+
+/* ------------------------- top carousel --- */
+
+/* Altered from w3schools tutorial */
+/* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  vertical-align: middle;
+  height: 675px;
+  background-position: bottom;
+  object-fit: cover;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  margin: auto;
+}
+.overTextBrisbane,
+.overTextActivities {
+  z-index: 980;
+  font-size: 7em;
+  color: #fff;
+  position: absolute;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-weight: 500;
+  animation: fadein 14s;
+  -moz-animation: fadein 7s; /* Firefox */
+  -webkit-animation: fadein 7s; /* Safari and Chrome */
+  -o-animation: fadein 7s; /* Opera */
+}
+
+.overTextBrisbane {
+  margin-top: 60px;
+  margin-left: 20%;
+}
+.overTextActivities {
+  margin-left: 30%;
+  margin-top: 170px;
+}
+
+@keyframes fadein {
+  from {
+    margin-left: 60%;
+  }
+  to {
+    margin-left: 30%;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  width: 100%;
+  color: #ffffff;
+  font-size: 0.8em;
+  padding: 8px 12px;
+  position: absolute;
+  font-family: "Open Sans";
+  top: 0px;
+  text-align: right;
+  height: 500px;
+  background-image: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 0),
+    rgba(20, 20, 20, 0.3),
+    rgba(20, 20, 20, 0.6),
+    rgba(20, 20, 20, 0.9)
+  );
+  z-index: 920;;
+
+
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  margin: -20px 2px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.9s ease;
+}
+
+.active {
+  background-color: #000000;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 3.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ------------------------- game section --- */
+
+#game {
+  width: 100%;
+  background-color: #f2f2f2;
+}
+.gameOptions {
+  display: flex;
+  justify-content: center;
+  margin: 0% 15% 0% 15%;
+  flex-wrap: wrap;
+}
+.gameCard {
+  background-color: #fff;
+
+  border-radius: 30px;
+  border: 1px solid #f5f5f5;
+
+  margin: 8%;
+
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
+}
+
+.gameCard a {
+  text-decoration: none;
+}
+
+.gameCard:nth-child(1) {
+  background-color: rgb(233, 234, 241);
+}
+.gameCard:nth-child(2) {
+  background-color: rgb(230, 240, 232);
+}
+
+.gameCard:hover {
+  box-shadow: 0 0 19px rgba(33, 33, 33, 0.2);
+}
+
+.gameCard h6 {
+  font-size: 1.8rem;
+  font-family: "Oswald";
+  color: #113b57;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0px 20px 20px 20px;
+}
+
+.gameCard p {
+  font-size: 0.6em;
+  padding: 0px 20px 5px 20px;
+  font-family: "Open Sans";
+  color: #113b57;
+}
+
+.gameCard img {
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+
+  border-radius: 20px;
+}
+
+.static {
+  margin-top: -220px;
+  position: absolute;
+  background: white;
+}
+
+.static:hover {
+  opacity: 0;
+}
+
+/* ------------------------- about section --- */
+
+#about {
+  /* height:500px; */
+  width: 100%;
+  background-color: #333;
+}
+.vanthTeamImgs,
+.vanthTeamRoles,
+.vanthTeamNames,
+.vanthTeamNamesABOUT,
+.otherSourcesGallery {
+  display: flex;
+  justify-content: center;
+  padding-left:100px;
+  padding-right:100px;
+  flex-wrap: wrap;
+}
+
+.vanthTeamImgs img {
+  flex: 20%;
+  padding: 30px;
+  /* border-radius: 50%; */
+  width: 70px;
+  flex-wrap: wrap;
+}
+
+.vanthTeamRoles p,
+.vanthTeamNames p,
+.vanthTeamNamesABOUT p {
+  width: 180px;
+  margin: 20px 25px 10px 25px;
+  text-align: center;
+
+  font-family: "Oswald";
+  font-weight: 300;
+
+  font-size: 2em;
+
+  color: #fff;
+}
+
+.teamBlurb {
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  justify-content: center;
+}
+
+.teamBlurb p {
+  padding:40px 30px 30px 30px;
+
+  font-family: "Open Sans";
+
+  font-size: 1em;
+
+  color: #fff;
+}
+
+.seeAboutVanth {
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: #4bb5c4;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-family: "Oswald";
+  display: block;
+}
+
+.sharethis-inline-share-buttons {
+  margin-top: 30px;
+  padding-bottom: 45px;
+}
+
+.st-btn {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+
+/* ------------------------- list of events --- */
+
+#records {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(229, 238, 235);
+  font-family: "Open Sans";
+}
+
+.searchIcon {
+  position: absolute;
+  top: 114px;
+}
+#find-event {
+  cursor: pointer;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin:10px 0px;
+}
+
+.blog-box {
+  max-width: 320px;
+  height: 420px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  margin: 42px;
+}
+
+.blog-box:hover {
+  box-shadow: 0 0 px rgba(33, 33, 33, 0.2);
+  opacity: 0.85;
+}
+
+.blog-img {
+  width: 100%;
+  height: 45%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px 10px 0px 0px;
+}
+.blog-text {
+  padding: 12px;
+  margin-top: 0px;
+}
+.blog-text span {
+  font-size: 0.9rem;
+}
+
+.blog-title {
+  color: #41a5a5;
+  font-size: 1.6em;
+  font-weight: 500;
+  font-family: "Oswald";
+  text-transform: capitalize;
+  text-transform: uppercase;
+  height: 80px;
+  padding-top: 20px;
+}
+
+.date {
+  margin-top: 5px;
+  margin-bottom: 23px;
+  font-size: 0.95em;
+  font-family: "Open Sans";
+  color: #899794;
+}
+.short-description {
+  color: #899794;
+  margin: 30px 0;
+  font-family: "Open Sans";
+  font-size: 0.7em;
+  height: 55px;
+}
+.blog-location {
+  font-size: 0.8em;
+  font-family: "Open Sans";
+}
+.blog-loc {
+  margin-top: 0.5em;
+  font-family: "Open Sans";
+}
+
+/* ---------------------- image overlay, button to open event details */
+.buttonToDetails {
+  position: absolute;
+  opacity: 0;
+  width: 253px;
+  background-color: #379683;
+  height: 330px;
+  padding: 0px;
+  margin-left: -18px;
+  margin-top: -355px;
+  cursor: pointer;
+}
+
+/* ----------------------- hover effect removes overlay -- */
+.buttonToDetails:hover {
+  opacity: 0;
+}
+/* .button {
+  -webkit-appearance: none;
+  background-color: #113b57;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid #113b57;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #f0de1e;
+  color: #045eb5;
+} */
+
+.hiden {
+  display: none;
+}
+
+/* ========================================================================== Quiz === */
+
+#eventQuiz .sectionHeader {
+  padding-bottom: 0px;
+  padding-top: 100px;
+}
+
+.quiz-page {
+  padding-top: 0px;
+  margin-top: -65px;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+/* -- question background image -- */
+.background img {
+  display: flex;
+  width: 79%;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 10.5%;
+  height: 170px;
+  border-radius: 30px;
+  opacity: 0.8;
+  filter: brightness(0.6);
+}
+/* -- question text -- */
+#question {
+  font-size: 3.1em;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  width: 100%;
+  padding: 150px 0px 40px 0px;
+  /* margin-left: 20px; */
+  color: #fff;
+}
+
+#choices {
+  display: flex;
+  justify-content: center;
+  /* margin-left:100px;
+  margin-right:10%; */
+
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+.choice {
+  width: 180px;
+  margin: 2%;
+  margin-top: 10px;
+
+  box-shadow: inset 0 0 0 0 #77c9d4;
+  color: #77c9d4;
+  transition: color 1s ease-in-out, box-shadow 1s ease-in-out;
+  text-align: center;
+}
+
+.choice input {
+  border: none;
+  border-radius: 30px;
+
+  background-color: #4bbd9b;
+  /* background-color: #98dbc7; */
+
+  color: #fff;
+  font-size: 1em;
+  font-family: "Open Sans";
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+
+  width: 100%;
+  height: 100px;
+
+  padding: 2%;
+
+  transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+  cursor: pointer;
+}
+
+.choice input:hover {
+  box-shadow: inset 220px 0 0 0 #98dbc7;
+  color: white;
+}
+
+/* #question {
+  font-size: 3em;
+  font-family: "Parisienne";
+  text-align:center;
+
+  color:#113b57;
+} */
+
+.generateOutcome {
+  background-color: #4bb5c4;
+  width: 40%;
+  padding: 10px;
+  margin-left: 30%;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Open Sans";
+  font-weight: 700;
+  border: none;
+}
+
+.generateOutcome:hover {
+  box-shadow: inset 700px 0 0 0 #8bbccc;
+  color: white;
+}
+
+/* .fuzzy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 5;
+} */
+#progress {
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+.prog {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: #c3c5e7;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.yourEvents {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#modal {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.6);
+  z-index: 10;
+
+  text-align: center;
+  font-family: "Oswald";
+  color: #113b57;
+}
+
+.close-modal {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  font-size: 30px;
+  color: rgb(145, 145, 145);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 5;
+}
+
+#gameModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+#gameModal h1 {
+  font-family:"Oswald";
+  font-size:1.3em;
+  color:#379683;
+}
+#gameModal p {
+  font-family:"Open Sans";
+  font-size:0.9em;
+  color:#899794;
+  padding-top:15px;
+}
+
+.closeGameModal {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 60px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+#dateSelect {
+  border-radius: 30px;
+  margin: 15px;
+  height: 35px;
+  padding: 10px;
+  border-style: solid;
+  border-color: #41a5a5;
+  color: #113b57;
+  font-size: 1em;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+#submit {
+  width: 46%;
+  margin-left: 27%;
+  background-color: #41a5a5;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.9em;
+  color: #fff;
+  font-family: "Open Sans";
+  padding: 8px;
+  display: list-item;
+  justify-content: center;
+}
+
+#filteredRecords {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #9fe9be;
+}
+
+.userChoose {
+  padding-top: 50px;
+  background-color: #9fe9be;
+  font-size: 1em;
+  font-family: "Open Sans";
+  display: flex;
+  justify-content: center;
+}
+.singleChoose {
+  padding: 0.5% 1.5% 0.5% 1.5%;
+  background-color: #fff;
+  color: #63d4bc;
+  border-radius: 30px;
+  margin: 3% 5% 3% 5%;
+}
+#filter {
+  width: 100%;
+}
+#filter-text {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  z-index: 1000;
+
+  height: 45px;
+  margin-left: 35%;
+  width: 30%;
+
+  border-radius: 30px;
+  border-color: #41a5a5;
+  border-style: solid;
+  border-width: 3px;
+  background-color: #ffffff;
+  color: #7a9e83;
+  /* color: #77c9d4; */
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.4em;
+  margin-bottom: 25px;
+}
+
+.go-back {
+  font-size: 1.8em;
+  width: 100%;
+  padding: 0.5% 1.5% 0.5% 1.5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-left: 500px;
+  margin-right: 500px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #41a5a5;
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: "Open Sans";
+}
+
+.go-backk {
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #41a5a5;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+.go-back:hover,
+.go-backk:hover {
+  opacity: 0.8;
+}
+
+body.quizLoaded #quizLoading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#quizLoading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: white url(../asset/newLoading.gif) center center no-repeat;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  z-index: 500;
+}
+
+.sorry {
+  width: 100%;
+  text-align: center;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-top: 4%;
+  padding-bottom: 30px;
+  color: #41a5a5;
+}
+
+/* ========================================================================== Game (Home Page) === */
+
+/* ========================================================================== List of events === */
+
+.detail-content {
+  margin-bottom: 10px;
+}
+#detail-container {
+  display: flex;
+  height: 100vh;
+}
+
+.picture img {
+  width: 94%;
+  margin: 3%;
+  height: max-content 250px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.side-panel-toggle {
+  width: 40px;
+  height: 100px;
+  margin-top: 100px;
+  margin-right: -40px;
+  z-index: 500;
+  display: absolute;
+
+  color: #41a5a5;
+  background: rgb(236, 243, 235);
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.side-panel-toggle:hover {
+  background: rgb(245, 245, 245);
+}
+
+.sp-icon-close {
+  display: none !important;
+}
+
+.side-panel {
+  display: none;
+  width: 35%;
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding: 20px;
+  margin-top: 100px;
+  color: #113b57;
+  background: rgb(255, 255, 255);
+}
+@media only screen and (max-width: 300px) {
+  .side-panel {
+    width: 95% !important;
+    color: green;
+  }
+}
+
+.side-panel-open .side-panel {
+  display: initial;
+}
+
+.side-panel-open .sp-icon-open {
+  display: none !important;
+}
+
+.side-panel-open .sp-icon-close {
+  display: initial !important;
+}
+.title {
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.4em;
+  color: #41a5a5;
+  padding: 2%;
+}
+.dateTitle {
+  display: flex;
+}
+.dateTitle i {
+  padding-top: 21px;
+}
+
+.detail-description-container-content i,
+.detail-date-container i,
+.detail-location-container-content i {
+  /* padding-top: 21px; */
+  margin-left: 12px;
+}
+
+.detail-description-container-content {
+  margin-top: -18px;
+}
+
+.dateTitle h1,
+.detail-location-container h1 {
+  color: #41a5a5;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 10px;
+}
+.detail-link {
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Oswald";
+  margin-left: 20px;
+  font-weight: normal;
+  color: #fff;
+}
+.detail-book-container a {
+  color:#fff;
+  padding-top:10px;
+}
+.detail-book-container i {
+  color:#fff;
+  padding-left:18px;
+  padding-top:12px;
+}
+.detail-book-container {
+  margin-top: 12px;
+  border-radius: 30px;
+  height:40px;
+  border: none;
+  background-color: #4bb5c4;
+  color: #fff;
+  align-items: center;
+  align-content: center;
+}
+.detail-date,
+.detail-location,
+.detail-type,
+.detail-description,
+b {
+  font-size: 0.8em;
+  font-family: "Open Sans";
+  color: #899794;
+  margin-left: 45px;
+  font-weight: normal;
+  margin-top: -25px;
+}
+b {
+  margin-left: 12px;
+}
+.detail-date {
+  margin-top: -18px;
+}
+.detail-date-container {
+  padding-bottom: 6px;
+}
+.detail-location {
+  margin-top: -21px;
+}
+.detail-location-container-content {
+  padding-top: -10px;
+}
+.fa-dragon {
+  padding-top: 22px;
+}
+.detail-type {
+  margin-top: -24px;
+  padding-bottom: 16px;
+}
+.distance p {
+  color: #41a5a5;
+  font-size: 1.3em;
+  font-family: "Open Sans";
+  margin-left: 11px;
+}
+.time p {
+  color: #41a5a5;
+  font-size: 1.3em;
+  font-family: "Open Sans";
+  margin-left: 11px;
+}
+
+.icon {
+  font-size: 1.3em;
+  padding-top: 15px;
+}
+/* .datail-location-container i {
+  padding-top: 25px;
+  font-size: 1.3em;
+} */
+
+.detail-description-container {
+  display: flex;
+}
+
+.description-icon {
+  margin-top: 27px;
+  font-size: 1.3em;
+}
+
+#map {
+  flex-grow: 1;
+  width: 65%;
+  height: 100vh;
+}
+.markerInfo h1 {
+  font-size: 1em;
+  color: red;
+}
+.markerInfo img {
+  width: 150px;
+  height: 100px;
+  justify-content: center;
+}
+
+#PokemonMap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.eventsContainer img {
+  width: 150px;
+  height: 100px;
+}
+.rule {
+  position: relative;
+  top: 4rem;
+  left: 2rem;
+}
+.rule p {
+  font-size: 1em;
+  font-weight: bold;
+  color: #e14d2a;
+}
+
+/* ========================================================================== About Page === */
+
+.imageSourcesGallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+}
+
+.galleryImg {
+  width: 320px;
+  height: 420px;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  margin: 42px;
+}
+
+.galleryImg img {
+  width: 100%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+.galleryImg h3,
+.galleryImg h4 {
+  padding: 20px;
+
+  text-align: center;
+}
+
+.galleryImg h3 {
+  color: #41a5a5;
+  font-size: 1.4em;
+  font-family: "Oswald";
+}
+
+.galleryImg h4 {
+  color: #899794;
+  font-size: 1em;
+  font-family: "Open Sans";
+}
+
+.teamVanth .vanthTeamNames p, .vanthTeamNamesABOUT p,
+.vanthTeamParagraphs h5 {
+  color: #41a5a5;
+  font-size: 1.6em;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Oswald";
+}
+
+.teamVanth .vanthTeamRoles p {
+  color: #899794;
+  font-size: 1em;
+  font-family: "Open Sans";
+}
+
+.vanthTeamParagraphs h5 {
+  padding: 30px 110px 10px 110px;
+}
+
+.vanthTeamParagraphs p,
+.vanthTeamPurpose p{
+  color: #899794;
+  font-size: 1em;
+  font-family: "Open Sans";
+  padding: 0px 110px 10px 110px;
+}
+
+.hideme {
+  opacity: 0;
+}
+
+/* ==================================================== R E S P O N S I V E N E S S */
+
+/* On smaller screens*/
+@media only screen and (max-width: 300px) {
+  .side-panel {
+    width: 95%;
+  }
+  .text {
+    font-size: 11px;
+  }
+  .numbertext {
+    width: 100%;
+    color: #ffffff;
+    font-size: 0.8em;
+    padding: 8px 12px;
+    position: absolute;
+    font-family: "Open Sans";
+    top: 0px;
+    text-align: right;
+    height: 150px;
+    background-image: linear-gradient(
+      to top,
+      rgba(20, 20, 20, 0),
+      rgba(20, 20, 20, 0.3),
+      rgba(20, 20, 20, 0.6),
+      rgba(20, 20, 20, 0.9)
+    );
+  }
+  .mySlides img {
+    height: 920px;
+  } 
+  .teamBlurb {
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+  }
+  .blog-box {
+    max-width: 290px;
+    margin: 42px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+	
+  .side-panel {
+    width: 95%;
+  }
+  
+  .overTextBrisbane,
+  .overTextActivities {
+    width:100%;
+    font-size: 16vw;
+    text-align: center;
+    padding:0px;
+    margin:0px;
+    margin-top:100px;
+  }
+  .overTextActivities {
+    margin-top:170px;
+  }
+  #question {
+    font-size: 2em;
+  }
+  .sectionHeader {
+    font-size: 3em;
+    padding: 100px 10px 40px 10px;
+  }
+  
+  .vanthTeamNames p {
+  width:28px;
+  font-size: 1em;
+  margin:2px 22px 0px 22px;
+}
+  .teamBlurb p {
+    width:100%;
+    padding:40px 30px 30px 30px;
+  }
+  #quizLoading {
+    background: white url(../asset/phoneLoading.gif) center center no-repeat;
+    background-size: contain;
+  }
+  #loading {
+    background: rgb(26, 26, 26) url(../asset/phoneLoading.gif);
+    background-size: contain;
+  }
+  .side-panel-toggle {
+    width: 30px;
+    margin-right: -22px;
+  }
+.vanthTeamImgs, .vanthTeamNames {
+  padding-left:5px;
+  padding-right:5px;
+}
+.choice input {
+  height:60px;
+}
+.generateOutcome {
+  background-color: #4bb5c4;
+  width: 50%;
+  margin-left:25%;
+  height:60px;
+}
+#modal {
+  width:80%;
+}
+#filter-text{
+  width:60%;
+  margin-left:21%
+}
+/* ------------------- NAVIGATION BAR ----- */
+
+
+}
+@media screen and (max-width: 1000px) {
+
+  .logo {
+    width:0px;
+    height:0px;
+    opacity:0;
+  }
+  nav {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .nav-links a i {
+    font-size: 2em;
+    padding-right:20px;
+    padding-left:20px
+  }
+  .nav-links a {
+    font-size: 0.6em;
+  }
+  .nav-links li {
+    padding-left: 2.5vw;
+  }
+  .logo a img {
+    width: 7vw;
+    margin-left: 80px;
+  }
+  .vanthTeamParagraphs h5, .vanthTeamParagraphs p, .vanthTeamPurpose p {
+    padding: 30px 30px 10px 30px;
+  }
+  .vanthTeamImgs img {
+    padding: 10px;
+  }
+  .vanthTeamNamesABOUT {
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .vanthTeamNamesABOUT p {
+    width:18px;
+    font-size: 1em;
+  }
+  .teamBlurb p {
+    font-size: 0.8em;
+  }
+  .st-btn {
+    margin-left:0px;
+  }
+  .mySlides img {
+    height: 525px;
+}
+.arrow {
+  width:10%;
+  margin-left:45%;
+  margin-top:430px;
+  padding-top: 0;
+  transition: top ease 2s;
+}
+}
